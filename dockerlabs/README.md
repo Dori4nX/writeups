@@ -2,26 +2,26 @@
 
 Laboratorios realizados en DockerLabs.
 
-Cada máquina incluye un writeup completo con la metodología seguida, enumeración, explotación y escalada de privilegios.
+Cada máquina incluye un writeup con la metodología seguida, enumeración, explotación y escalada de privilegios.
 
 ---
 
-## Máquinas
+# Máquinas
 
-### 🟢 Domain
+---
 
-Máquina Linux centrada en:
+## 🟡 Domain
 
-- Enumeración SMB
-- Credenciales débiles
+**Sistema:** Linux  
+**Dificultad:** Media  
+
+**Técnicas:**
+
+- SMB Enumeration
+- Weak Credentials
 - Webshell PHP
-- Escalada mediante SUID
+- SUID Abuse
 
-➡️ [Ver writeup](Domain/Domain.md)
-
+[➡️ Ver writeup](Domain/Domain.md)
 
 ---
-
-### 🟡 Próximamente
-
-Nuevas máquinas serán añadidas próximamente.
