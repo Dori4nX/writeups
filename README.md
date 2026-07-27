@@ -16,7 +16,8 @@ Soy técnico de sistemas y actualmente me estoy preparando para la certificació
 ## Writeups
 
 | Máquina | Plataforma | Sistema operativo | Dificultad | Técnicas | Enlace |
-| --- | --- | --- | --- | --- | --- |
+| :--- | :---: | :---: | :---: | :--- | :---: |
+| **Domain** | DockerLabs | 🐧 Linux | 🟡 Media | SMB · Credenciales débiles · Webshell PHP · SUID (`nano`) | [Leer writeup →](dockerlabs/Domain/Domain.md) |
 
 La tabla se actualizará a medida que se publiquen nuevos writeups.
 

@@ -7,4 +7,5 @@ Esta sección reunirá writeups de máquinas vulnerables de DockerLabs desplegad
 ## Writeups
 
 | Máquina | Sistema operativo | Dificultad | Técnicas | Writeup |
-| --- | --- | --- | --- | --- |
+| :--- | :---: | :---: | :--- | :---: |
+| **Domain** | 🐧 Linux | 🟡 Media | SMB · Credenciales débiles · Webshell PHP · SUID (`nano`) | [Leer writeup →](Domain/Domain.md) |
