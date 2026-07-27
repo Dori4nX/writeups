@@ -65,6 +65,7 @@ Los puertos `139/tcp` y `445/tcp` exponen Samba, lo que indica que el sistema of
 | 80/tcp  | HTTP        | Apache 2.4.52 (Ubuntu) | Servidor web accesible         |
 | 139/tcp | NetBIOS-SSN | Samba smbd 4           | SMB sobre NetBIOS              |
 | 445/tcp | SMB         | Samba smbd 4           | Servicio SMB directo sobre TCP |
+
 En conclusión, la máquina presenta dos líneas principales de enumeración: la aplicación web y los recursos compartidos mediante SMB. A partir de este punto analizaremos ambos servicios para determinar si permiten acceso sin autenticación o exponen información útil.
 
 ___
@@ -96,6 +97,7 @@ como resultado encontramos 2 posibles usuarios bob y james:
 | ------- | --------------- | ------ |
 | `james` | Enumeración SMB | Válido |
 | `bob`   | Enumeración SMB | Válido |
+
 Posteriormente realicé una enumeración del protocolo samba:
 
 ```bash
