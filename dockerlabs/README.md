@@ -1,11 +1,27 @@
 # DockerLabs
 
-Esta sección reunirá writeups de máquinas vulnerables de DockerLabs desplegadas en entornos locales y controlados. Cada publicación documentará únicamente prácticas realizadas y verificadas durante mi formación.
+Laboratorios realizados en DockerLabs.
 
-> **Uso ético:** todo el contenido de esta sección procederá únicamente de laboratorios, CTF, máquinas propias y entornos autorizados. No se publicarán flags, credenciales reales ni información sensible.
+Cada máquina incluye un writeup completo con la metodología seguida, enumeración, explotación y escalada de privilegios.
 
-## Writeups
+---
 
-| Máquina | Sistema operativo | Dificultad | Técnicas | Writeup |
-| :--- | :---: | :---: | :--- | :---: |
-| **Domain** | 🐧 Linux | 🟡 Media | SMB · Credenciales débiles · Webshell PHP · SUID (`nano`) | [Leer writeup →](Domain/Domain.md) |
+## Máquinas
+
+### 🟢 Domain
+
+Máquina Linux centrada en:
+
+- Enumeración SMB
+- Credenciales débiles
+- Webshell PHP
+- Escalada mediante SUID
+
+➡️ [Ver writeup](Domain/Domain.md)
+
+
+---
+
+### 🟡 Próximamente
+
+Nuevas máquinas serán añadidas próximamente.
