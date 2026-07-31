@@ -36,7 +36,7 @@ arp-scan -I eth0 --localnet --ignoredups
 ping -c 1 192.168.0.104
 ```
 
-![1-Reconocimiento.png](img/1-Reconocimiento.png)
+![1-Reconocimiento.png](images/1-Reconocimiento.png)
 
 Posteriormente se realiza un escaneo de puertos para identificar los servicios expuestos:
 
@@ -46,9 +46,9 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 192.168.0.104 -oG allPorts
 nmap -p22,80 -sCV -Pn 192.168.0.104 -oN targeted
 ```
 
-![2-ReconocimientoAllPorts.png](img/2-ReconocimientoAllPorts.png)
+![2-ReconocimientoAllPorts.png](images/2-ReconocimientoAllPorts.png)
 
-![3-ReconocimientoTargeted.png](img/3-ReconocimientoTargeted.png)
+![3-ReconocimientoTargeted.png](images/3-ReconocimientoTargeted.png)
 
 Los resultados muestran los siguientes servicios:
 
@@ -73,7 +73,7 @@ Se realiza una enumeración del servicio HTTP:
 nmap -p80 --script http-enum -Pn 192.168.0.104
 ```
 
-![4-EnumeraciónHTTP.png](img/4-EnumeraciónHTTP.png)
+![4-EnumeraciónHTTP.png](images/4-EnumeraciónHTTP.png)
 
 El resultado muestra que el servidor utiliza WordPress.
 
@@ -89,7 +89,7 @@ Por ello se añade la resolución del dominio en el archivo `/etc/hosts`:
 echo "192.168.0.104 academy.thl" >> /etc/hosts
 ```
 
-![7-EnumeracionWeb3.png](img/7-EnumeracionWeb3.png)
+![7-EnumeracionWeb3.png](images/7-EnumeracionWeb3.png)
 
 Tras revisar la aplicación no se encuentran vectores evidentes, por lo que se realiza una enumeración de directorios:
 
@@ -99,7 +99,7 @@ gobuster dir -u http://academy.thl/wordpress/ \
 -t 40 -x php,html,txt,bak -b 403,404
 ```
 
-![8-EnumeracionGobuster.png](img/8-EnumeracionGobuster.png)
+![8-EnumeracionGobuster.png](images/8-EnumeracionGobuster.png)
 
 Se identifica un panel de autenticación de WordPress.
 
@@ -113,7 +113,7 @@ Se realiza una enumeración de usuarios mediante WPScan:
 wpscan --url http://academy.thl/wordpress --enumerate u
 ```
 
-![9-EnumeracionWPScan.png](img/9-EnumeracionWPScan.png)
+![9-EnumeracionWPScan.png](images/9-EnumeracionWPScan.png)
 
 Se identifica el usuario:
 
@@ -129,7 +129,7 @@ wpscan --url http://academy.thl/wordpress \
 -P /usr/share/wordlists/rockyou.txt
 ```
 
-![10-EnumeracionWPScan2.png](img/10-EnumeracionWPScan2.png)
+![10-EnumeracionWPScan2.png](images/10-EnumeracionWPScan2.png)
 
 Se obtiene una contraseña válida:
 
@@ -152,7 +152,7 @@ Bit File Manager
 
 El plugin permite gestionar archivos del servidor y subir contenido, permitiendo aprovecharlo para cargar un archivo PHP malicioso.
 
-![11-ExplotacionPlugin.png](img/11-ExplotacionPlugin.png)
+![11-ExplotacionPlugin.png](images/11-ExplotacionPlugin.png)
 
 Se crea una webshell PHP:
 
@@ -164,13 +164,13 @@ Se crea una webshell PHP:
 
 y se sube al servidor.
 
-![12-ExplotacionFileUpload.png](img/12-ExplotacionFileUpload.png)
+![12-ExplotacionFileUpload.png](images/12-ExplotacionFileUpload.png)
 
 Una vez subida la webshell se utiliza para ejecutar una reverse shell hacia la máquina atacante.
 
-![13-ExplotacionRevShellurl.png](img/13-ExplotacionRevShellurl.png)
+![13-ExplotacionRevShellurl.png](images/13-ExplotacionRevShellurl.png)
 
-![14-ExplotacionRevshell.png](img/14-ExplotacionRevshell.png)
+![14-ExplotacionRevshell.png](images/14-ExplotacionRevshell.png)
 
 Se realiza un tratamiento de la TTY:
 
@@ -204,7 +204,7 @@ chmod +x pspy64
 ./pspy64
 ```
 
-![15-PrivescPSPY.png](img/15-PrivescPSPY.png)
+![15-PrivescPSPY.png](images/15-PrivescPSPY.png)
 
 Durante la monitorización se identifica una tarea cron ejecutada como root:
 
@@ -213,7 +213,7 @@ Durante la monitorización se identifica una tarea cron ejecutada como root:
 /bin/sh -c /opt/backup.sh
 ```
 
-![16-PrivescCRON.png](img/16-PrivescCRON.png)
+![16-PrivescCRON.png](images/16-PrivescCRON.png)
 
 El script `backup.sh` no existe, pero se comprueba que el usuario `www-data` tiene permisos para crearlo dentro de `/opt`.
 
@@ -234,7 +234,7 @@ Con el siguiente contenido:
 
 Tras la ejecución automática del cron se obtiene una shell privilegiada.
 
-![17-PrivescRoot.png](img/17-PrivescRoot.png)
+![17-PrivescRoot.png](images/17-PrivescRoot.png)
 
 **Vector:** tarea cron ejecutada como root con un script modificable por un usuario sin privilegios.
 
