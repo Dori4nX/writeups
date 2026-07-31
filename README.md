@@ -2,14 +2,14 @@
 
 Repositorio personal donde documento máquinas vulnerables, laboratorios, metodologías y técnicas aprendidas durante mi formación en ciberseguridad y pentesting.
 
-Actualmente me encuentro preparando la certificación **eJPT** y utilizo este repositorio para consolidar conocimientos, mejorar mi documentación técnica y crear un portfolio público de writeups.
+Actualmente estoy preparando la certificación **eJPT** y utilizo este repositorio para consolidar conocimientos, mejorar mi documentación técnica y construir un portfolio público de writeups.
 
 ---
 
 ## 📚 Plataformas
 
 - [DockerLabs](dockerlabs/README.md)
-- [The Hacker Labs](thehackerlabs/README.md)
+- [The Hacker Labs](TheHackerLabs/README.md)
 - [Hack The Box](hack-the-box/README.md)
 - [TryHackMe](tryhackme/README.md)
 - [VulnHub](vulnhub/README.md)
@@ -18,7 +18,7 @@ Actualmente me encuentro preparando la certificación **eJPT** y utilizo este re
 
 ## 🛠️ Metodologías
 
-- [Metodologías](metodologias/README.md)
+- [Metodologías](methodologies/README.md)
 
 ---
 
@@ -30,4 +30,4 @@ Actualmente me encuentro preparando la certificación **eJPT** y utilizo este re
 
 ## ⚠️ Aviso
 
-Todo el contenido de este repositorio ha sido realizado sobre laboratorios, máquinas vulnerables o entornos autorizados con fines exclusivamente educativos.
+Todo el contenido de este repositorio ha sido elaborado en laboratorios, máquinas vulnerables o entornos con autorización expresa y tiene fines exclusivamente educativos.
