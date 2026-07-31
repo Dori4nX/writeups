@@ -11,6 +11,9 @@
 - [DockerLabs](dockerlabs/README.md)
     - [Domain](dockerlabs/Domain/Domain.md)
 
+- TheHackerLabs
+    - [Academy](TheHackerLabs/academy/Academy.md)
+
 - [VulnHub](vulnhub/README.md)
 
 
