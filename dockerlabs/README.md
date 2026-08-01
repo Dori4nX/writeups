@@ -38,6 +38,6 @@ Cada máquina incluye un writeup con la metodología seguida, enumeración, expl
 - Remote Code Execution
 - Sudo Abuse
 
-[➡️ Ver writeup](FindYourStyle/FindYourStyle.md)
+[➡️ Ver writeup](https://dori4nx.gitbook.io/writeups/writeups/dockerlabs/findyourstyle)
 
 ---
