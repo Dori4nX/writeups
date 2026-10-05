@@ -7,6 +7,7 @@
 - [Hack The Box](hack-the-box/README.md)
 
 - [TryHackMe](tryhackme/README.md)
+    - [Internal](tryhackme/Internal/Internal.md)
 
 - [DockerLabs](dockerlabs/README.md)
     - [Domain](dockerlabs/Domain/Domain.md)
