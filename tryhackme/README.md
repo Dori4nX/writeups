@@ -1,10 +1,28 @@
 # TryHackMe
 
-Esta sección reunirá writeups de salas, máquinas y laboratorios de TryHackMe realizados durante mi formación. Los documentos se centrarán en el procedimiento técnico y en los aprendizajes obtenidos, sin presentar contenido pendiente como si ya estuviera completado.
+Laboratorios realizados en TryHackMe.
 
-> **Uso ético:** todo el contenido de esta sección procederá únicamente de laboratorios, CTF y entornos autorizados. No se publicarán flags, credenciales reales ni información sensible.
+Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medidas de seguridad relacionadas.
 
-## Writeups
+---
 
-| Máquina | Sistema operativo | Dificultad | Técnicas | Writeup |
-| --- | --- | --- | --- | --- |
+# Máquinas
+
+---
+
+## 🔴 Internal
+
+**Sistema:** Linux<br>
+**Dificultad:** Difícil
+
+**Técnicas y conceptos:**
+
+- WordPress y permisos administrativos
+- Contraseñas débiles
+- Servicios internos y segmentación
+- Jenkins y ejecución de código con permisos administrativos
+- Credenciales almacenadas en texto plano
+
+[➡️ Ver writeup](Internal/Internal.md)
+
+---
