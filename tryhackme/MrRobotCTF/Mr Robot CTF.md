@@ -78,7 +78,7 @@ elliot:ER28-0652
 ![4-ArchivoLicense](images/4-ArchivoLicense.png)
 
 ---
-## Reverse Shell - WordPress
+# Reverse Shell - WordPress
 
 Una vez autenticados en el panel de WordPress con las credenciales encontradas, aprovechamos los permisos administrativos para modificar el archivo `footer.php` del tema activo e insertar una reverse shell PHP generada mediante [RevShells](https://www.revshells.com/).
 
@@ -148,7 +148,7 @@ find / -type f -name "key-*.txt" 2>/dev/null
 ![7-PrivescRobot](images/7-PrivescRobot.png)
 
 ---
-## Escalada de privilegios
+# Escalada de privilegios a root
 
 Realizamos una enumeración de binarios con el bit **SUID**:
 
