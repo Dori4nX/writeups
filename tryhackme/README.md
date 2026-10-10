@@ -34,7 +34,7 @@ Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medid
 
 - Enumeración con Gobuster y credenciales expuestas en `license.txt`
 - RCE autenticada editando `footer.php` en WordPress (reverse shell)
-- Crackeo del hash MD5 de `robot` con John the Ripper
+- Crackeo del hash MD5 con John the Ripper
 - Escalada de privilegios mediante Nmap con SUID
 
 [➡️ Ver writeup](MrRobotCTF/Mr%20Robot%20CTF.md)
