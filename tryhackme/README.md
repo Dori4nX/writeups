@@ -32,11 +32,11 @@ Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medid
 
 **Técnicas y conceptos:**
 
-- Enumeración de WordPress con WPScan y XML-RPC
-- RCE autenticada editando la plantilla `404.php` (reverse shell)
-- Recuperación de credenciales locales
-- Escalada de privilegios abusando de Nmap con SUID
+- Enumeración con Gobuster y credenciales expuestas en `license.txt`
+- RCE autenticada editando `footer.php` en WordPress (reverse shell)
+- Crackeo del hash MD5 de `robot` con John the Ripper
+- Escalada de privilegios mediante Nmap con SUID
 
-[➡️ Ver writeup](MrRobot/MrRobot.md)
+[➡️ Ver writeup](MrRobotCTF/Mr%20Robot%20CTF.md)
 
 ---

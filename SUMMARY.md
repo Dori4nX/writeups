@@ -8,7 +8,7 @@
 
 - [TryHackMe](tryhackme/README.md)
     - [Internal](tryhackme/Internal/Internal.md)
-    - [Mr Robot CTF](tryhackme/MrRobot/MrRobot.md)
+    - [Mr Robot CTF](tryhackme/MrRobotCTF/Mr%20Robot%20CTF.md)
 
 - [DockerLabs](dockerlabs/README.md)
     - [Domain](dockerlabs/Domain/Domain.md)
