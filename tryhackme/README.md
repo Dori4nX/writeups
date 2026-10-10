@@ -26,3 +26,19 @@ Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medid
 [➡️ Ver writeup](Internal/Internal.md)
 
 ---
++
+## 🟡 Mr Robot CTF
+
+**Sistema:** Linux<br>
+**Dificultad:** Media
+
+**Técnicas y conceptos:**
+
+- Enumeración de WordPress y WPScan
+- XML-RPC
+- Shell interactiva con Python
+- Escalada mediante Nmap con permisos SUID
+
+[➡️ Ver writeup](MrRobot/MrRobot.md)
+
+---
