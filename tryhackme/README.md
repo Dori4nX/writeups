@@ -17,16 +17,14 @@ Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medid
 
 **Técnicas y conceptos:**
 
-- WordPress y permisos administrativos
-- Contraseñas débiles
-- Servicios internos y segmentación
-- Jenkins y ejecución de código con permisos administrativos
-- Credenciales almacenadas en texto plano
+- RCE autenticada editando `footer.php` en WordPress (reverse shell)
+- Pivoting a Jenkins interno con Chisel
+- RCE con Groovy en la Script Console de Jenkins
+- Escalada a root mediante credenciales expuestas
 
 [➡️ Ver writeup](Internal/Internal.md)
 
 ---
-+
 ## 🟡 Mr Robot CTF
 
 **Sistema:** Linux<br>
@@ -34,10 +32,10 @@ Cada máquina incluye un writeup con los hallazgos, los aprendizajes y las medid
 
 **Técnicas y conceptos:**
 
-- Enumeración de WordPress y WPScan
-- XML-RPC
-- Shell interactiva con Python
-- Escalada mediante Nmap con permisos SUID
+- Enumeración de WordPress con WPScan y XML-RPC
+- RCE autenticada editando la plantilla `404.php` (reverse shell)
+- Recuperación de credenciales locales
+- Escalada de privilegios abusando de Nmap con SUID
 
 [➡️ Ver writeup](MrRobot/MrRobot.md)
 
