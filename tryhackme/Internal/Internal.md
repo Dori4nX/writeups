@@ -1,8 +1,9 @@
 # Internal
 
-> **Plataforma:** TryHackMe
-> **Dificultad:** Difícil
+> **Plataforma:** TryHackMe  
+> **Dificultad:** Difícil  
 > **Sistema operativo:** Linux
+>
 
 ## Resumen
 
