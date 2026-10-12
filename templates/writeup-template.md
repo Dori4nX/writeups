@@ -1,181 +1,86 @@
-# Plantilla de writeup
+# Nombre de la máquina
 
-> Uso exclusivo para laboratorios, CTF, máquinas propias o entornos con autorización explícita.
-
-# [Nombre de la máquina]
-
-> **Plataforma:** [DockerLabs / HackTheBox / TryHackMe / Otra]  
-> **Dificultad:** [Fácil / Media / Difícil]  
-> **Sistema operativo:** [Linux / Windows]  
-> **IP objetivo:** [IP]
-
----
+> **Plataforma:**\
+> &#x20;**Dificultad:**\
+> &#x20;**Sistema operativo:**\
+> &#x20;**IP objetivo:** &#x20;
 
 ## Resumen
 
-Breve descripción del laboratorio indicando el vector de entrada y la técnica principal utilizada para conseguir privilegios.
-
-Ejemplo:
-
-> Máquina Linux donde se explota una mala configuración de SMB, credenciales débiles y un binario SUID vulnerable para obtener privilegios de root.
-
----
+Breve explicación de la máquina, el punto de entrada y la escalada de privilegios.
 
 ## Cadena de ataque
-
 ```text
 Servicio expuesto
-      |
-      ↓
-Vulnerabilidad / mala configuración
-      |
-      ↓
-Acceso inicial
-      |
-      ↓
+    ↓
+Vulnerabilidad o mala configuración
+    ↓
+Acceso como usuario
+    ↓
 Escalada de privilegios
-      |
-      ↓
-Root / Administrator
+    ↓
+root / SYSTEM
+
 ```
 
----
-
-# Reconocimiento
-
-## Descubrimiento de puertos
-
+## Reconocimiento
 ```bash
-[comando utilizado]
+nmap -p- --open -sS --min-rate 5000 -n -Pn <IP> -oG allPorts
+nmap -sCV -p<PUERTOS> <IP> -oN targeted
+
 ```
 
-Resultado:
+| Puerto | Servicio | Versión | Hallazgo |
+| ------ | -------- | ------- | -------- |
+|        |          |         |          |
 
-[Captura]
-
-### Servicios encontrados
-
-| Puerto | Servicio | Versión | Observaciones |
-|---|---|---|---|
-| | | | |
-
----
-
-# Enumeración
-
-## [Servicio]
-
-Comandos utilizados:
-
+## Enumeración
 ```bash
-[comando]
+# Comandos principales utilizados
+
 ```
 
-Hallazgos:
+**Hallazgo importante:**
 
-- [Hallazgo importante]
-- [Información obtenida]
+Explica qué encontraste y por qué decidiste investigarlo.
 
-Interpretación:
-
-[Explicación breve de por qué este hallazgo es importante]
-
----
-
-# Explotación
-
-Explicación breve de la vulnerabilidad encontrada y cómo fue aprovechada.
-
+## Explotación
 ```bash
-[comando utilizado]
+# Payload, petición o exploit utilizado
+
 ```
 
-Resultado:
+**Resultado:** acceso obtenido como `<usuario>`.
 
-[Captura]
+## Escalada de privilegios
+```bash
+# Enumeración y comandos principales
 
-**Vector:** [Vulnerabilidad explotada]
+```
 
-**Resultado:** [Acceso obtenido]
+**Vector:** explica brevemente la configuración vulnerable.
 
----
+**Resultado:** acceso obtenido como `root` o `SYSTEM`.
 
-# Acceso inicial
-
-Usuario obtenido:
-
+## Cadena final
 ```text
-[usuario]
+<servicio> → <vulnerabilidad> → <shell> → <escalada> → root/SYSTEM
+
 ```
 
-Método de acceso:
+## Aprendizajes
 
-[Explicación breve]
+- Técnica nueva aprendida.\
+  &#x20;
+- Error o bloqueo encontrado.\
+  &#x20;
+- Qué haría más rápido la próxima vez.\
+  &#x20;
 
----
+## Mitigaciones
 
-# Estabilización de shell
-
-Si fue necesario mejorar la shell:
-
-```bash
-[comandos]
-```
-
----
-
-# Escalada de privilegios
-
-Enumeración realizada:
-
-```bash
-[comandos]
-```
-
-Hallazgo:
-
-[Explicación del fallo encontrado]
-
-Explotación:
-
-```bash
-[comando]
-```
-
-Resultado:
-
-[Captura]
-
-**Vector:** [SUID / sudo / permisos / kernel / otro]
-
-**Resultado:** root
-
----
-
-# Caminos descartados
-
-| Prueba | Resultado | Motivo |
-|---|---|---|
-| | | |
-
----
-
-# Mitigaciones
-
-| Hallazgo | Recomendación |
-|---|---|
-| | |
-
----
-
-# Lecciones aprendidas
-
-- [Técnica aprendida]
-- [Error cometido]
-- [Mejora para próximos laboratorios]
-
----
-
-# Referencias
-
-- [Recurso utilizado]
+- Medida defensiva principal.\
+  &#x20;
+- Corrección de la mala configuración.\
+  &#x20;
+- Recomendación adicional.
