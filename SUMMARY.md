@@ -16,6 +16,7 @@
 
 - [TheHackerLabs](TheHackerLabs/README.md)
     - [Academy](TheHackerLabs/academy/Academy.md)
+    - [Base](TheHackerLabs/Base/Base.md)
 
 - [VulnHub](vulnhub/README.md)
 
