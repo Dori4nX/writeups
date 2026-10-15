@@ -1,4 +1,3 @@
-
 > **Plataforma:** The Hacker Labs  
 > **Dificultad:** Avanzado  
 > **Sistema operativo:** Linux
