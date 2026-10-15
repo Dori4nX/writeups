@@ -33,11 +33,11 @@ Cada máquina incluye un writeup con la metodología seguida, enumeración, expl
 
 **Técnicas:**
 
-- SQL Injection manual con `UNION SELECT`
+- SQL Injection manual
 - Subida de webshell en FlatPress y reverse shell
-- Crackeo de hash bcrypt con John the Ripper
+- Crackeo de hash con John the Ripper
 - Movimiento lateral mediante el grupo `adm` y logs
-- Escalada de privilegios mediante `sudo awk`
+- Escalada de privilegios binario `awk`
 
 [➡️ Ver writeup](Base/Base.md)
 
